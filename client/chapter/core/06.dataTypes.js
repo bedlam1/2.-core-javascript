@@ -63,9 +63,31 @@ console.log(typeof(obj));
 
 // Object
 
+const user = {
+    name: 'tiger',
+    age: 27,
+    sayHi: function(){              // normal function method
+        console.log('hello~~');
+    },
+    sayHi2:()=>{                    // arrow function method
+        console.log('hello2~~');
+    },
+    sayHi3(){                       // concise method << 얘를 더 많이씀(this가 있기 때문에)
+        console.log('hello3~~');
+    }
+}
+
 // Array
 
+const arr = [1, 'a', {name:'tiger'}, 4, ()=>{}];
+
 // function
+
+function sum(){
+    console.log(1+2);
+}
+
+sum();
 
 // this
 
