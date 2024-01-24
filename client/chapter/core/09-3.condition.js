@@ -121,4 +121,49 @@ else if( thisTime === LATE_NIGHT || thisTime === DAWN){
 // 5 : 금 
 // 6 : 토
 
-let week = prompt('숫자 입력');
+// 함수를 쓰는 이유 : 코드의 재사용성을 높이기 위해 => 매개변수의 활용
+//관심사의 분리 separation of concerns
+//함수는 하나의 기능만을 수행 하는거 추천
+
+// const num = +prompt('숫자 입력');
+
+function getRandom(n){
+    return Math.floor(Math.random()*n);
+}
+
+function getDay(num){
+
+    switch(num){
+        case 0:
+            return '일';
+        case 1:
+            return '월';
+        case 2:
+            return '화';
+        case 3:
+            return '수';
+        case 4:
+            return '목';
+        case 5:
+            return '금';
+        case 6:
+            return '토';
+    }
+}
+// 요일을 뽑아내는 함수 => 오일을 가지고 월~금 : 평일입니다. 일,토: 주말입니다.
+
+function weekend(){
+    const today = getDay(getRandom(7));
+
+    if(today.includes('토') || today.includes('일')){
+        console.log(`오늘은 ${today}요일 이며 주말입니다.`);
+    }
+    else {
+        console.log(`오늘은 평일입니다.`);
+    }
+
+    // return today.includes('토') || today.includes('일') ? '주말입니다' : '평일입니다';
+}
+
+
+
