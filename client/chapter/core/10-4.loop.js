@@ -58,3 +58,21 @@ const js = {
         console.log(key);
     }
   }
+
+
+
+
+  /**
+   * 배열도 for .. in을 쓸수 있을까? 가능
+   * 그러나 for .. in은 되도록이면 객체에서만 쓰고 배열에서는 쓰지말자
+   * 배열은 순서가 중요한데 data가 많아지면 배열은 순서가 뒤바뀔수도 있다. 성능도 x
+   */
+
+  const tens = [10, 100, 1000, 10000];
+
+
+for(let key in tens){
+  console.log(tens[key]);
+}
+
+
