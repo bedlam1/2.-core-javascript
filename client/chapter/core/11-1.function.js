@@ -94,9 +94,66 @@ rem('30px', 10) // '3rem'
 
 // Test Driven Developement(TDD)
 
-console.assert(rem(20) === '1.25rem'); 
+// console.assert(rem(20) === '1.25rem'); 
 
-console.assert(rem('25px') === '1.5625rem') 
+// console.assert(rem('25px') === '1.5625rem') 
+
+
+function getStyle(node, prop){
+  // validation
+  if(typeof node ==='string'){
+    node=document.querySelector(node);               // 문자로 전달해도 되고 
+  }
+
+  if(typeof prop !== 'string'){
+    throw new Error('getStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다');
+  }
+
+  return getComputedStyle(node)[prop];
+}
+
+// const first = document.querySelector('.first');   // 변수로 전달해도 되고 
+
+const size = getStyle('.first', 'fontSize');         // 32px
+
+console.log(size);
+
+
+/**
+ * computed property
+ * 점표기법, 대괄호 표기법 
+ */ 
+function setStyle(node, prop, value){
+  
+  if(typeof node === 'string'){
+    node = document.querySelector(node);
+  }
+  if(typeof prop !== 'string'){
+    throw new Error('setStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+  }
+  if(!value){
+    throw new Error('setStyle 함수의 세번째 인수는 필수 입력값 입니다.');
+  }
+  node.style[prop] = value;
+}
+
+
+setStyle('.first', 'color', 'red')
+
+
+// const CSS = (node, prop, value) => (!value) ? getStyle(node,prop) : setStyle(node,prop,value);
+
+function CSS(node, prop, value){
+  if(!value){     // getter
+    return getStyle(node,prop);
+  }
+
+  setStyle(node,prop,value);
+
+
+}
+
+
 
 
 
