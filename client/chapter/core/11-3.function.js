@@ -48,7 +48,7 @@ const calculateTotal = function(moneyA, moneyB, moneyC, moneyD) {
     // 인수가 하나일때 
     // args.forEach(item => sum += item)
 
-    // reduce 
+    // reduce => 값을 반환
     // args.reduce((acc,cur)=>{
     //     acc+cur
     // },0)
@@ -56,24 +56,17 @@ const calculateTotal = function(moneyA, moneyB, moneyC, moneyD) {
     return sum;
   };
 
+                      // rest parameter
 //   let calcAllMoney = (...args) => args.reduce((acc,cur)=> acc+cur,0);
   
   console.log(calcAllMoney(10,20,30,40));
 
 
 // ({}) 쓰면 return 생략
-const createUser = (name,age)=>({
-
-    
-        name: name,
-        age:age
-    
-})
+const createUser = (name,age)=>({name: name, age:age})
 
 createUser('이경민', 41);
 createUser('김보미', 43);
-
-
 
 
 
@@ -84,6 +77,15 @@ createUser('김보미', 43);
 
 
 // 자바스크립트 함수는 양면의 얼굴 (일반함수 / 생성자 함수)
+const c = () => {
+
+}
+
+class C {
+
+}
+
+
 // arrow 함수를 쓰게되면 생성자 함수를 쓸수없다
 // 생성자함수를 만들때는 class를 만들어쓰자. 
 
@@ -98,7 +100,7 @@ function button2(){
 const a= button()               // undefined >> 일반함수
 
 // 앞에 new를 붙이면 다 객체가 생성
-const b = new button()          // button {} >> 객체 >> 생성자 함수
+// const b = new button()          // button {} >> 객체 >> 생성자 함수
 
 
 /**
@@ -142,15 +144,6 @@ const user = {
       
     }
   }
-  
-
-
-
-
-
-
-
-
 
 
 
@@ -166,7 +159,33 @@ const user = {
   /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
   
   // pow(numeric: number, powerCount: number): number;
-  let pow; 
+  let pow = (num, count) => {
+    let answer=1;
+    for(let i=1; i<count+1; i++){
+      answer *= num;
+    }
+    return answer;
+  }; 
+
+  console.log(pow(2,10));
+
+
+
+
+  let powExpression = (numeric, powCount) => {
+    Array(powCount).fill(null).reduce((acc) =>{
+      return acc*numeric;
+    },1)
+  };
+
+
+
   
   // repeat(text: string, repeatCount: number): string;
-  let repeat; 
+  let repeat = (text, count) => {
+    for(let i=0; i<count; i++){
+      console.log(text);
+    }
+  }; 
+
+  repeat('안녕', 3);
