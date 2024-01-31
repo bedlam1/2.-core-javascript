@@ -29,17 +29,23 @@ function solution(num){
     console.log(arr.length);
     for(i=1; i<arr.length; i++){
         console.log(i,j);
-        for(j=i; sum>num; j++){
-            console.log(i,j);
-            sum+=arr[j];
-            if(sum===num){
-                cnt++;
-                break;
-            }
+        // for(j=i; sum>num; j++){
+        //     console.log(i,j);
+        //     sum+=arr[j];
+        //     if(sum===num){
+        //         cnt++;
+        //         break;
+        //     }
+        // }
+        j=i;
+        sum=0;
+        while(1){
+            sum += arr[j];
+            
         }
 
-        console.log(i,j);
-        sum=0;
+        
+        
     }
     arr=[];
     return cnt;
