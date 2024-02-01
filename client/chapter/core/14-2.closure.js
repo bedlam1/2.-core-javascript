@@ -93,6 +93,7 @@ function earth(){
 const first = document.querySelector('.first');
 
 
+// 함수가 알아서 실행됨 
 
 const handleClick = (() => {
     let isClicked = false;
@@ -113,6 +114,41 @@ first.addEventListener('click',handleClick)
 
 
 
+
+
+function useState(initValue){
+    let value = initValue;
+
+    function read(){
+        return value;
+    }
+
+    function write(newValue){
+        value = newValue;
+    }
+
+    return [read, write];
+}
+
+
+const [state, setState] = useState(111);
+
+state();     // getter
+setState();  // setter
+
+
+
+/**
+ * 자바스크립트의 함수는 일급 함수로 인식되기 때문에 값처럼 취급이 됩니다.
+ * 그래서 함수의 리턴값으로 함수를 내보낼 수 있따는 사실은 면접관님도 잘알고 계실거라 생각합니다.
+ * 그 방식을 사용해서 함수안의 함수가 바깥 환경에 대한 변수를 참조하고 이를 
+ * 함수 본문으로 리턴이 된다면, 밖에서 안쪽 함수를 제어함으로써 안쪽함수의 바깥환경을 
+ * 참조하여 코드를 작성할수 있습니다.
+ * 이때! 가장 중요한게 뭔지 아시죠?. 바로 가비지 컬렉터입니다.
+ * 안쪽 함수는 바깥쪽 변수를 여전히 참조하고 있기 때문에 이는 가비지컬렉터의 수집 대상이 아닙니다.
+ * 그래서 함수의 실행이 끝나도 여전히 변수가 살아있는 이유가 바로 여기에 있습니다.
+ * 
+ */
 
 
 
