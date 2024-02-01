@@ -58,3 +58,43 @@ function Ani(name){
       return `${target}에게 조심히 접근한다.`
     }
   }
+
+
+
+
+
+    // 스태틱 메서드
+    Array.from();
+    Array.isArray();
+
+
+    const arr = new Array();
+
+    // 인스턴스 메서드
+    arr.forEach();
+    arr.reduce();
+
+
+
+
+    class Array{
+      static from(){
+
+      }
+
+      static isArray(){
+
+      }
+
+      forEach(){
+
+      }
+
+      reduce(){
+        
+      }
+    }
+
+
+
+
