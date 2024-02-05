@@ -69,9 +69,9 @@ getComputedStyle(first)['backgroundColor']; // getter
 //   const css = (node,prop,value) => !value ? getCss(node,prop) : setCss(node,prop,value)
 
 
-getCss('.first', 'fontSize');   //16px
+// getCss('.first', 'fontSize');   //16px
 
-setCss('.first','fontSize', '30px');    // setter
+// setCss('.first','fontSize', '30px');    // setter
 
 // getCss()
 // setCss()

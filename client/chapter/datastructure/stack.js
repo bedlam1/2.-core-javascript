@@ -1,12 +1,5 @@
 
 
-function stakc(){
-
-    constructor(){
-        
-    }
-
-    function init(){
-
-    }
+const stack = {
+   
 }
