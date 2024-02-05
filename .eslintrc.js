@@ -8,6 +8,8 @@ module.exports = {
     globals:{
         getNode:true,
         getNodes:true,
+        attr:true,
+        insertLast:true,
     },
     "overrides": [
         {
