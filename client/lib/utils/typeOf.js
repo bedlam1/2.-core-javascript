@@ -14,3 +14,4 @@ function typeOf(data){
   export const isString = data => typeOf(data) === 'string';
   export const isBoolean = data => typeOf(data) === 'boolean';
   export const isFunction = data => typeOf(data) === 'function';
+  export const isNumericString = data => isNaN(Number(data));
