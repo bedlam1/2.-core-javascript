@@ -14,6 +14,7 @@ console.log(first.className);   // getter
 // first.classNmae = ''    // 전체삭제
 
 
+
 // - classList – 클래스 하나를 관리할 수 있게 해주는 메서드로 개별 클래스를 조작할 때 유용
 
 
